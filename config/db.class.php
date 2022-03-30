@@ -10,9 +10,11 @@ class Db
         if (!isset(self::$connection)) {
             $config = parse_ini_file("config.ini");
             self::$connection = new mysqli("localhost", $config["username"], $config["password"], $config["database"], $config["port"]);
+            // echo ("Kết nối thành công!");
         }
         if (self::$connection == false) {
             // xữ lý ghi file tại đây
+            echo ("Kết nối thất bại!");
             return false;
         }
         return self::$connection;
@@ -24,6 +26,7 @@ class Db
         // khởi tạo kết nối
         $connection = $this->connect();
         // thực hiện excute truy vấn
+        $connection -> query("SET NAMES utf8");
         $result  = $connection->query($queryString);
         $connection->close();
         return $result;

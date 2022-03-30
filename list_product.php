@@ -6,6 +6,7 @@ require_once("./entities/product.class.php");
 <?php
 include_once("header.php"); ?>
 <div class="container">
+    <h3 class="h3-title"> Sản phẩm cửa hàng </h3>
     <div class="row my-2">
         <?php
         $prods = Product::list_product();
@@ -16,6 +17,11 @@ include_once("header.php"); ?>
             <img height='200' class='card-img-top' onerror='this.onerror=null; this.src='" . $imgDefault . "'' src='" . $item["Picture"] . "' alt='" . $item["ProductName"] . "' style='object-fit:contain'>
             <div class='card-body'>
               <p class='card-text'>" . $item["ProductName"] . "</p>
+              <p class ='card-text'>" .$item ["Price"]. "</p>
+              <p>
+              <button type ='button' class= 'btn btn-primary'> Mua hàng </button>
+          </p>
+
             </div></div>
   </div>";
         } ?>

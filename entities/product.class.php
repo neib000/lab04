@@ -24,6 +24,15 @@ class Product
     // lưu sản phẩm
     public function save()
     {
+        //xử lí upload hình ảnh
+        // $file_temp = $this -> picture['tmp_nam'];
+        // $user_file = $this -> picture['name'];
+        // $timestamp = date("Y").date("m").date("d").date("h").date("i").date("s");
+        // $filepath ="uploads/".$timestamp.$user_file;
+        // if(move_uploaded_file($file_temp, $filepath) ==false)
+        // {
+        //     return false;
+        // }
         $db = new Db();
         // thêm sản phẩm vào CSDL
 
